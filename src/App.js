@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useEffect} from 'react';
+import axios from 'axios'
 import './App.css';
-
+import Main from './Components/Main'
+import './Shared/Scss/Colors/Colors.scss'
+import {useDispatch} from 'react-redux'
+import authActions from './Redux/Actions/authActions'
 function App() {
+const dispatch=useDispatch()
+  function parseURLHash () {
+    var search = window.location.hash.substring(1);
+    var urlHash = search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
+                     function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
+    return urlHash;
+}
+var urlHash = parseURLHash();
+var accessToken = urlHash.access_token;
+
+
+
+
+  useEffect(()=>{
+    
+    dispatch(authActions(accessToken))
+
+},[])
+   
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    
+      <Main/>
+        
     </div>
   );
 }

@@ -1,0 +1,94 @@
+$borderColor:#707070;
+$primaryColor:#B4B2C0;
+.sideBarContainer{
+    background-color: rgba($color:$primaryColor, $alpha: 0.2);
+    border: 1px solid  rgba($color: $borderColor, $alpha: 0.6);
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+ padding-top: 2rem;
+   
+
+.actor_info{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    &__img{
+       
+        figure{
+            height: 6rem;
+            width: 6rem;
+
+            img{
+                display: inline-block;
+                border-radius: 50%;
+                width:100%;
+                height: 100%;
+                object-fit:cover;
+
+            }
+        }
+    }
+
+    &__name{
+        p{
+            color:#222C56;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+       
+    }
+
+    &__subtitle{
+
+        p{
+            color:$primaryColor;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+
+
+}
+.number_group{
+padding-top: 5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+.actor_followers{
+   
+    p{
+        color:$primaryColor;
+        font-weight: bold;
+        span{
+             color:#222C56;
+             font-weight: bolder;
+        }
+    }
+}
+
+
+.actor_popularity{
+    p{
+        color:$primaryColor;
+        font-weight: bold;
+        span{
+             color:#222C56;
+             font-weight: bolder;
+        }
+    }
+}
+
+}
+
+}

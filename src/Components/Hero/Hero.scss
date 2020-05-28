@@ -1,0 +1,86 @@
+
+$primaryColor:#03002E;
+$secondaryColor:#FA9507;
+
+.hero_container{
+    
+    display: grid;
+    grid-template-columns: 3fr  2fr 1fr;
+    grid-template-rows: 80vh 20vh;
+    overflow: hidden;
+    background-color: $primaryColor;
+    .content{
+       padding: 2rem;
+        display: flex;
+        div:first-child{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           
+
+            p{
+                font-size: 4rem;
+                color: white;
+            }
+            .link{
+                color:$secondaryColor ;
+                font-size: 2rem;
+                text-decoration: none;
+               
+            }
+           
+
+
+        }
+
+        div:nth-child(2)
+        {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          figure{
+              width: 8rem;
+              height: 8rem;
+             
+              img{
+                border-radius: 50%;
+                  display: inline-block;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                   
+              }
+          }
+        }
+    }
+    .image{
+        figure{
+           
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        grid-row: 1/-1;
+    }
+
+    .space{
+        
+        grid-row: 1/-1;
+    }
+    .footer{
+       
+        grid-row:2/3;
+        grid-column: 1/1;
+        background-color: $secondaryColor;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        p{
+            font-size: 2.2rem;
+             letter-spacing: 0.5rem;
+
+        }
+    }
+}
