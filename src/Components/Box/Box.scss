@@ -15,6 +15,8 @@ $thirdColor:#B4B2C0;
     &__body{
 
        background-color: $primaryColor;
+       height: auto;
+       overflow: auto;
         &--title{
           color: $secondaryColor;
           font-weight: bold;

@@ -15,9 +15,9 @@ export const ArtistsError=(errmsg)=>({
 export const FetchArtists=(token)=>dispatch=>{
 
     dispatch(ArtistsLoading())
+    axios.get('https://api.spotify.com/v1/search?q=year%3A2001&type=artist&market=US&limit=50'
 
-    console.log('token in action is'+token)
-    axios.get('https://api.spotify.com/v1/search?q=year%3A2001&type=artist&market=US&limit=50',{
+    ,{
 
         headers: {
             'Authorization': 'Bearer ' + token
@@ -45,18 +45,17 @@ export const searchingArtist=()=>({
     type:actionTypes.SEARCHING
 })
 
-export const activatingSearch=()=>({
-    type:actionTypes.ACTIVATING_SEARCH
+export const disactivatingSearch=()=>({
+    type:actionTypes.DISACTIVATING_SEARCH
 })
 
 export const searchArtistResult=(artist)=>({
-    type:actionTypes.SEARCHING_RESULT,
+    type:actionTypes.SEARCHING_RESULT_ARTIST,
     payload:artist
 })
 
 
 export const searchArtist=(token,query)=>dispatch=>{
-    console.log("token search"+token)
     dispatch(searchingArtist)
     axios.get(`https://api.spotify.com/v1/search?q=${query}&type=artist&market=US`,{
 

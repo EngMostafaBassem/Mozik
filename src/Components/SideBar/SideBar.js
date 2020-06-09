@@ -1,7 +1,7 @@
 import React from 'react'
 import './SideBar.scss'
 const SideBar=({actorInfo})=>{
-    console.log(actorInfo)
+  
     return(
       
         <div className="sideBarContainer">

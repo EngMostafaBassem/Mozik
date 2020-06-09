@@ -1,7 +1,6 @@
-
 import * as actionTypes from '../Actions/actionTypes'
-const artistReducer=(state={
-    artists:[],
+const albumReducer=(state={
+    Albums:[],
     loading:true,
     err:null
 },action)=>{
@@ -9,23 +8,25 @@ const artistReducer=(state={
     switch(action.type)
     {
 
-         case actionTypes.ARTISTS_LOADING:
+         case actionTypes.ALBUMS_LOADING:
          
             return {...state,loading:true,err:null}
 
 
-         case actionTypes.ARTISTS_ERROR:
+         case actionTypes.ALBUMS_ERROR:
              return {...state,loading:false,err:action.payload}
              
              
-          case actionTypes.ARTISTS_SHOW:
-           
-              return {...state,loading:false,artists:action.payload}   
-        default:
+          case actionTypes.ALBUMS_SHOW:
+            
+                return {...state,loading:false,Albums:action.payload}   
 
+
+           
+        default:
 
              return state
     }
        
 }
-export default artistReducer
+export default albumReducer

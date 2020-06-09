@@ -2,7 +2,6 @@ import React,{useEffect} from 'react';
 import axios from 'axios'
 import './App.css';
 import Main from './Components/Main'
-import './Shared/Scss/Colors/Colors.scss'
 import {useDispatch} from 'react-redux'
 import authActions from './Redux/Actions/authActions'
 function App() {
@@ -15,10 +14,6 @@ const dispatch=useDispatch()
 }
 var urlHash = parseURLHash();
 var accessToken = urlHash.access_token;
-
-
-
-
   useEffect(()=>{
     
     dispatch(authActions(accessToken))
@@ -27,10 +22,8 @@ var accessToken = urlHash.access_token;
    
    
   return (
-    <div>
-    
-      <Main/>
-        
+    <div> 
+      <Main/>       
     </div>
   );
 }

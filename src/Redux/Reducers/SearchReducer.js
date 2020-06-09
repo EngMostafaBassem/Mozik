@@ -4,7 +4,8 @@ const SearchReducer=(state={
         
     isSearching:false,
     searchResult:[],
-    activeSearch:false
+    savedArtists:[]
+    
 
 
 },action)=>{
@@ -12,14 +13,22 @@ const SearchReducer=(state={
     switch(action.type){
 
      case actionTypes.SEARCHING:
-          return {...state,isSearching:true,searchResult:[],activeSearch:true}
+          return {...state,isSearching:true,searchResult:[],activeSearch:false}
 
      case actionTypes.SEARCHING_RESULT:
+          console.log(action.payload)
           return {...state,isSearching:false,searchResult:action.payload,activeSearch:true} 
           
       
-     case actionTypes.ACTIVATING_SEARCH:
+     case actionTypes.DISACTIVATING_SEARCH:
           return  {...state,isSearching:false,searchResult:[],activeSearch:false}
+
+
+     case actionTypes.SEARCHING_RESULT_ARTIST:
+       
+        return  {...state,isSearching:false,searchResult:action.payload,savedArtists:action.payload,activeSearch:true}
+
+
           
           
       default:

@@ -68,10 +68,11 @@ align-items: center;
 .actor_followers{
    
     p{
-        color:$primaryColor;
+        color:#222C56;
+      
         font-weight: bold;
         span{
-             color:#222C56;
+             color:$primaryColor;
              font-weight: bolder;
         }
     }
@@ -80,10 +81,11 @@ align-items: center;
 
 .actor_popularity{
     p{
-        color:$primaryColor;
+        color:#222C56;
         font-weight: bold;
         span{
-             color:#222C56;
+            
+             color:$primaryColor;
              font-weight: bolder;
         }
     }

@@ -8,10 +8,10 @@ import Box from '../Box/Box'
 import {Container,Col,Row} from 'reactstrap'
 import axios from 'axios'
 import {useSelector,useDispatch} from 'react-redux'
-import {FetchArtists,searchArtist,activatingSearch} from '../../Redux/Actions/artistsActions'
+import {FetchArtists,searchArtist,disactivatingSearch} from '../../Redux/Actions/artistsActions'
 import Loading from '../Loading'
-const Artist=()=>{
 
+const Artist=()=>{
 
   const dispatch=useDispatch()
   const token=useSelector(state=>state.authReducer.token)
@@ -21,20 +21,16 @@ const Artist=()=>{
 const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',followers:'',img:''})
 
   useEffect(()=>{
-      console.log("here in artists "+token)
+      
+        dispatch(disactivatingSearch())   
         dispatch(FetchArtists(token))
 
-  },[token])
+  },[])
 
 
-  useEffect(()=>{
-           console.log("artists is "+artistsData.artists)
-  },[artistsData])
-    
 
-  const updateInfo=(item)=>{
-      console.log(item)
-      
+
+  const updateInfo=(item)=>{     
     setActorInfo(
         {
         name:item.name,
@@ -46,9 +42,9 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
     
   }
   const textChange=(query)=>{
-      console.log(token+"ss")
+      
       if(query==""){
-          dispatch(activatingSearch())
+          dispatch(disactivatingSearch())
       }
       else{ dispatch(searchArtist(token,query))}
   }
@@ -58,7 +54,7 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
       
         <div className="artistContainer">
             <NavBar/>
-            <Header textChange={textChange}/>
+            <Header textChange={textChange} placeHolder="Searhing for Artists"/>
             <Content>
                 <Container className="mt-5" >
                     <Row>
@@ -71,7 +67,13 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
                           artistSearch.searchResult.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2" onMouseOver={()=>updateInfo(item)} key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[0].url} name={item.name} genres={item.genres[0]} />
+                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[0].url} 
+                            
+                             name={item.name}
+                             subtitle={item.genres[0]}
+                             actorId={item.id}
+                             
+                             />
                           
                          </Col>
                          )):
@@ -79,7 +81,12 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
                           artistsData.artists.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2" onMouseOver={()=>updateInfo(item)} key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[1].url} name={item.name} genres={item.genres[0]} />
+                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[1].url} 
+                            name={item.name}
+                            subtitle={item.genres[0]}
+                            actorId={item.id}
+
+                              />
                           
                          </Col>
                          ))

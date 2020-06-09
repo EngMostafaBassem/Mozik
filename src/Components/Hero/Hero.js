@@ -13,19 +13,19 @@ const Hero=()=>{
 
                <div>
                    <figure>
-                       <img src="../images/ketty2.jpg"/>
+                       <img src="../../images/ketty2.jpg"/>
                    </figure>
                    <figure>
-                       <img src="../images/selena.jpg"/>
+                       <img src="../../images/selena.jpg"/>
                    </figure>
                    <figure>
-                       <img src="../images/taylor.jpg"/>
+                       <img src="../../images/taylor.jpg"/>
                    </figure>
                </div>
            </div>
            <div className="image">
               <figure>
-                  <img src="../images/background.jpeg"/>
+                  <img src="../../images/background.jpeg"/>
               </figure>
                
                </div>

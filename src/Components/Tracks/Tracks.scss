@@ -1,0 +1,7 @@
+$primaryColor:#E6E8ED;
+.TracksContainer{
+    background-color:$primaryColor ;
+    display: grid;
+    grid-template-columns: 20rem 1fr 20rem;
+    grid-template-rows: 10vh 90vh;
+}
