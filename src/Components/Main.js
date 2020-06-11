@@ -9,8 +9,9 @@ import Albums from './Albums/Albums'
 import {disactivatingSearch} from '../Redux/Actions/albumsActions'
 import Tracks from './Tracks/Tracks'
 
+
 const Auth=()=>{
-    const auth=useContext(Auth)
+    
 
 useEffect(()=>{
 
@@ -29,15 +30,11 @@ useEffect(()=>{
 const Main=()=>{
     const dispatch=useDispatch()
 
-    const [statusAuth,setStatusAuth]=useState(false)
-
-    const changeStatus=()=>{
-        setStatusAuth(true)
-    }
-
+  
     return(
         <div>
        
+      
            <BrowserRouter>
            <Switch>
            
@@ -63,7 +60,7 @@ const Main=()=>{
             <Redirect  to= "/Auth" />       
            </Switch>
            </BrowserRouter>
-          
+       
         </div>
     )
 }

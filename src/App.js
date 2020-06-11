@@ -1,10 +1,24 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import axios from 'axios'
 import './App.css';
 import Main from './Components/Main'
 import {useDispatch} from 'react-redux'
 import authActions from './Redux/Actions/authActions'
+import TrackContext from '../src/Components/context-track'
 function App() {
+
+
+  const [playingID,setPlayingID]=useState(null)
+  const [trackPreview,setTrackPreview]=useState(null)
+
+    
+    const changePlayingID=(id)=>{
+
+        
+        setPlayingID(id)
+    }
+
+
 const dispatch=useDispatch()
   function parseURLHash () {
     var search = window.location.hash.substring(1);
@@ -23,7 +37,9 @@ var accessToken = urlHash.access_token;
    
   return (
     <div> 
+       <TrackContext.Provider value={{playingID,changePlayingID}}>
       <Main/>       
+      </TrackContext.Provider>
     </div>
   );
 }

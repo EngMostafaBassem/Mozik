@@ -1,18 +1,19 @@
 
-import React,{useState,useCallback, useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 
 import  './TrackCard.scss'
 import {useHistory} from 'react-router-dom'
-const TrackCard=({img,name,artistName,time,trackPreview})=>{
+
+import TrackContext from '../context-track'
+const TrackCard=({img,name,artistName,time,trackPreview,trackID})=>{
 const [play,setPlayTrack]=useState(false)
 const [pause,setPauseTrack]=useState(true)
 const [audio,setAudio]=useState(new Audio(trackPreview))
 const history=useHistory()
 
-history.listen((location, action) => {
-   pauseTrack()
-  })
 
+
+ const trackCon=useContext(TrackContext)
 
     function msToTime(s) {
         var ms = s % 1000;
@@ -29,17 +30,18 @@ history.listen((location, action) => {
          
 
    const playTrack=()=>{
+    
+   
+    trackCon.changePlayingID(trackID)
+    
       
-    setPauseTrack(false)
-    setPlayTrack(true)
-       audio.play();
+    
    }
 
    const pauseTrack=()=>{
-       
-    setPauseTrack(true)
-    setPlayTrack(false)
-       audio.pause();
+    
+    trackCon.changePlayingID(null)
+    
 }
 
 const truncateString=(str)=>{
@@ -47,6 +49,53 @@ const truncateString=(str)=>{
     return  sepeatorIndex==-1?str:str.split('').slice(0,sepeatorIndex).join('')
 
 }
+
+
+
+useEffect(()=>{
+
+    return ()=>{
+        setPauseTrack(true)
+        setPlayTrack(false)
+        audio.pause()
+        trackCon.changePlayingID(null)
+    }
+},[history])
+
+
+
+
+useEffect(()=>{
+
+
+ if(trackID==trackCon.playingID)
+ {
+     
+    setPauseTrack(false)
+    setPlayTrack(true)      
+    audio.play();
+ }
+
+
+ 
+
+     if(trackID!=trackCon.playingID)
+    {
+        
+        setPauseTrack(true)
+        setPlayTrack(false)
+        audio.pause()
+
+
+
+    }
+
+
+    
+
+},[trackCon])
+
+
 
 
     return(
@@ -76,4 +125,4 @@ const truncateString=(str)=>{
         </div>
     )
 }
-export default TrackCard
+export default React.memo(TrackCard)

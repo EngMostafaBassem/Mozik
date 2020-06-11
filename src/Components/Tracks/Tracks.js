@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState ,useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import Header from '../Header/Header'
@@ -12,6 +12,8 @@ import Box from '../Box/Box'
 import {FetchTracks,searchTrack,disactivatingSearch} from '../../Redux/Actions/tracksActions'
 
 import TrackCard from '../TrackCard/TrackCard'
+import TrackContext from '../context-track'
+
 const Tracks=(props)=>{
 
     const params=useParams()
@@ -22,7 +24,12 @@ const Tracks=(props)=>{
     const TracksData=useSelector(state=>state.trackReducer)
     const trackSearch=useSelector(state=>state.SearchReducer)
     const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',followers:'',img:''})
+    const [playingID,setPlayingID]=useState(null)
+    const changePlayingID=(id)=>{
 
+        
+      setPlayingID(id)
+  }
 
    useEffect(()=>{
           dispatch(disactivatingSearch())
@@ -33,7 +40,7 @@ const Tracks=(props)=>{
    
     useEffect(()=>{
 
-      console.log(params.id2)
+    
        
         let artist=artistsData.artists.find(item=>item.id===params.id2)
         if(artist==null)
@@ -72,7 +79,7 @@ const Tracks=(props)=>{
             <Content>
                 <Container>
                 <Row >
-                    
+                <TrackContext.Provider value={{playingID,changePlayingID}}>
                     {
                  
                  (TracksData.loading||trackSearch.isSearching)?<Loading/>:
@@ -87,6 +94,7 @@ const Tracks=(props)=>{
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
                   img={actorInfo.img}
+                  trackID={item.id}
                    />
                   </Col>
                   
@@ -101,6 +109,7 @@ const Tracks=(props)=>{
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
                   img={actorInfo.img}
+                  trackID={item.id}
                    />
                   </Col>
                   )
@@ -108,7 +117,7 @@ const Tracks=(props)=>{
 
 
                 }
-                   
+                    </TrackContext.Provider>
               
                 </Row>
                
