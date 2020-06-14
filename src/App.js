@@ -4,20 +4,15 @@ import './App.css';
 import Main from './Components/Main'
 import {useDispatch} from 'react-redux'
 import authActions from './Redux/Actions/authActions'
-import TrackContext from '../src/Components/context-track'
+
 function App() {
 
 
-  const [playingID,setPlayingID]=useState(null)
-  const [trackPreview,setTrackPreview]=useState(null)
+  
+
 
     
-    const changePlayingID=(id)=>{
-
-        
-        setPlayingID(id)
-    }
-
+   
 
 const dispatch=useDispatch()
   function parseURLHash () {
@@ -32,14 +27,26 @@ var accessToken = urlHash.access_token;
     
     dispatch(authActions(accessToken))
 
+    
+
+
 },[])
    
+useEffect(()=>{
+  
+    setTimeout(() => {
+      
+        window.location.assign('https://accounts.spotify.com/en/authorize?client_id=75b27752a2824d73a49e934a0f8e69f4&response_type=token&redirect_uri=http://localhost:3000/Main')
+
+    }, 3600*60);
+  }
+)
    
   return (
     <div> 
-       <TrackContext.Provider value={{playingID,changePlayingID}}>
+       
       <Main/>       
-      </TrackContext.Provider>
+     
     </div>
   );
 }

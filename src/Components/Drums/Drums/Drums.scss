@@ -1,0 +1,20 @@
+$primaryColor:#E6E8ED;
+.DrumsContainer{
+    background-color:$primaryColor ;
+    display: grid;
+    grid-template-columns: 20rem 1fr 20rem;
+    grid-template-rows: 10vh 90vh;
+}
+
+.drums-btns{
+    width: 40%;
+    height:5rem;
+    margin-top: -5rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+    flex:3;
+    align-self: center;
+   
+}

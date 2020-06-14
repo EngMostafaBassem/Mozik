@@ -1,0 +1,27 @@
+
+$primary-color:#A7ABB0;
+$secondary-color:#0A0E17;
+.DrumButton{
+
+    height: 3rem;
+    width:3rem;
+    border-radius: 50%;
+    background-color: rgba($color: $primary-color, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid $secondary-color;
+    cursor: pointer;
+  
+
+    p{
+        margin: 0;
+        color:  rgba($color:  $secondary-color, $alpha: 0.5);
+        font-weight: bold;
+    }
+}
+
+.activeBtn{
+    transform:scale(1.5);
+  
+}

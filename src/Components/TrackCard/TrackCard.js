@@ -6,6 +6,8 @@ import {useHistory} from 'react-router-dom'
 
 import TrackContext from '../context-track'
 const TrackCard=({img,name,artistName,time,trackPreview,trackID})=>{
+
+  
 const [play,setPlayTrack]=useState(false)
 const [pause,setPauseTrack]=useState(true)
 const [audio,setAudio]=useState(new Audio(trackPreview))
@@ -50,6 +52,10 @@ const truncateString=(str)=>{
 
 }
 
+useEffect(()=>{
+
+    console.log('repeated')
+})
 
 
 useEffect(()=>{
@@ -73,6 +79,8 @@ useEffect(()=>{
      
     setPauseTrack(false)
     setPlayTrack(true)      
+   
+   
     audio.play();
  }
 
@@ -125,4 +133,4 @@ useEffect(()=>{
         </div>
     )
 }
-export default React.memo(TrackCard)
+export default  React.memo(TrackCard)

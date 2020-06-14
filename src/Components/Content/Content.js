@@ -2,7 +2,7 @@ import React from 'react'
 import './Content.scss'
 const Content=(props)=>{
     return(
-        <div className="contentContainer">
+        <div className= {props.drums?" contentContainer drums":"contentContainer"}>
                 {props.children}
         </div>
     )

@@ -1,0 +1,14 @@
+
+$primaryColor:#B4B2C0;
+
+$secondaryColor:#A7ABB0;
+.drum-text{
+
+    background-color: rgba($color:$primaryColor, $alpha: 0.5)  ;
+    p{
+        color: $secondaryColor;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+}

@@ -9,8 +9,7 @@ import '../Tracks/Tracks.scss'
 import {Container,Col,Row} from 'reactstrap'
 import Loading from '../Loading'
 import Box from '../Box/Box'
-import {FetchTracks,searchTrack,disactivatingSearch} from '../../Redux/Actions/tracksActions'
-
+import {FetchTracks,searchTrack,disactivatingSearch,FetchTracksAll} from '../../Redux/Actions/tracksActions'
 import TrackCard from '../TrackCard/TrackCard'
 import TrackContext from '../context-track'
 
@@ -25,16 +24,21 @@ const Tracks=(props)=>{
     const trackSearch=useSelector(state=>state.SearchReducer)
     const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',followers:'',img:''})
     const [playingID,setPlayingID]=useState(null)
-    const changePlayingID=(id)=>{
-
-        
+    const changePlayingID=(id)=>{     
       setPlayingID(id)
   }
 
    useEffect(()=>{
           dispatch(disactivatingSearch())
-          dispatch(FetchTracks(token,params.id))
+          if(params.id)
+          {
+            dispatch(FetchTracks(token,params.id))
          
+          }
+          else{
+            dispatch(FetchTracksAll(token))
+          }
+          
    },[])
 
    
@@ -93,7 +97,7 @@ const Tracks=(props)=>{
                   name={item.name}
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
-                  img={actorInfo.img}
+                  img={actorInfo.img===''?'../../images/anonymous-person-221117.jpg':actorInfo.img}
                   trackID={item.id}
                    />
                   </Col>
@@ -108,7 +112,7 @@ const Tracks=(props)=>{
                   name={item.name}
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
-                  img={actorInfo.img}
+                  img={(actorInfo.img==='')?'../../images/anonymous-person-221117.jpg':actorInfo.img}
                   trackID={item.id}
                    />
                   </Col>

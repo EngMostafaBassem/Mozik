@@ -14,10 +14,10 @@ const NavBar=()=>{
           </div>
 
           <ul className="nav-container">
-            <li><i class="fa fa-wpexplorer fa-2x"></i><Link className="link">Explore</Link></li>
-            <li><i class="fa fa-music fa-2x"></i><Link className="link">Tracks</Link></li>
+            <li><i class="fa fa-gamepad fa-2x" ></i><Link className="link" to="/Drums">Enjoy</Link></li>     
             <li> <i class="fa fa-microphone fa-2x"></i><Link className="link"  to="/Artists">Artists</Link></li>
             <li> <i class="fa fa-image fa-2x"></i><Link className="link"  onClick={()=>dispatch(FetchAlbumsAll())}  to="/Albums">Albums</Link></li>
+            <li><i class="fa fa-music fa-2x"></i><Link className="link" to="/Tracks">Tracks</Link></li>
           </ul>
           </div>
     )

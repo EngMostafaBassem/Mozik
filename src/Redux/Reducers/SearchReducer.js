@@ -16,8 +16,13 @@ const SearchReducer=(state={
           return {...state,isSearching:true,searchResult:[],activeSearch:false}
 
      case actionTypes.SEARCHING_RESULT:
-          console.log(action.payload)
-          return {...state,isSearching:false,searchResult:action.payload,activeSearch:true} 
+
+     let filterdSearch=[...action.payload]
+     const preview_url_Exsist=filterdSearch.some(item=>item.preview_url)
+     if(preview_url_Exsist)
+        filterdSearch=filterdSearch.filter(item=>item.preview_url!=null)
+
+          return {...state,isSearching:false,searchResult:filterdSearch,activeSearch:true} 
           
       
      case actionTypes.DISACTIVATING_SEARCH:
@@ -26,11 +31,9 @@ const SearchReducer=(state={
 
      case actionTypes.SEARCHING_RESULT_ARTIST:
        
-        return  {...state,isSearching:false,searchResult:action.payload,savedArtists:action.payload,activeSearch:true}
+         return  {...state,isSearching:false,searchResult:action.payload,savedArtists:action.payload,activeSearch:true}
 
-
-          
-          
+        
       default:
           return state    
 

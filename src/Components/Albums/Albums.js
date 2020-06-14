@@ -79,7 +79,7 @@ const Albums=(props)=>{
                           albumsSearch.searchResult.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2"  key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[0].url} 
+                            <Box img={(item.images.length==0)?'../../images/anonymous-person-221117.jpg':item.images[0].url} 
                             name={item.name}
                             subtitle={item.release_date}
                             albumId={item.id}
@@ -93,7 +93,7 @@ const Albums=(props)=>{
                           albumsData.Albums.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2"  key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[0].url} 
+                            <Box img={(item.images.length==0)?'../../images/anonymous-person-221117.jpg':item.images[0].url} 
                             name={item.name}
                             subtitle={item.release_date}
                             albumId={item.id}

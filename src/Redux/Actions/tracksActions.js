@@ -40,13 +40,13 @@ export const FetchTracksAll=(token)=>dispatch=>{
         dispatch(TracksLoading())
     
        
-        axios.get(`https://api.spotify.com/v1/search?q=a&type=album&market=US`,{
+        axios.get(`https://api.spotify.com/v1/search?q=a&type=track&market=US`,{
     
             headers: {
                 'Authorization': 'Bearer ' + token
             },
         })
-        .then(data=>dispatch(TracksShow(data.data.Tracks.items))).catch(err=> dispatch( TracksError(err)))
+        .then(data=>dispatch(TracksShow(data.data.tracks.items))).catch(err=> dispatch( TracksError(err)))
     
     }
     
@@ -80,6 +80,7 @@ export const searchTrackResult=(track)=>({
 
 
 export const searchTrack=(token,query)=>dispatch=>{
+    console.log(token)
     dispatch(searchingTracks())
     axios.get(`https://api.spotify.com/v1/search?q=${query}&type=track&market=US`,{
 
