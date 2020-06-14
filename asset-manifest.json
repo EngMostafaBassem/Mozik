@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Mozik/static/css/main.6b88c009.chunk.css",
+    "main.js": "/Mozik/static/js/main.0c9d818c.chunk.js",
+    "main.js.map": "/Mozik/static/js/main.0c9d818c.chunk.js.map",
+    "runtime-main.js": "/Mozik/static/js/runtime-main.b71472d1.js",
+    "runtime-main.js.map": "/Mozik/static/js/runtime-main.b71472d1.js.map",
+    "static/css/2.301ce841.chunk.css": "/Mozik/static/css/2.301ce841.chunk.css",
+    "static/js/2.4ff8b428.chunk.js": "/Mozik/static/js/2.4ff8b428.chunk.js",
+    "static/js/2.4ff8b428.chunk.js.map": "/Mozik/static/js/2.4ff8b428.chunk.js.map",
+    "index.html": "/Mozik/index.html",
+    "precache-manifest.43131e0d1d6ae5a8e81b37f938e5f166.js": "/Mozik/precache-manifest.43131e0d1d6ae5a8e81b37f938e5f166.js",
+    "service-worker.js": "/Mozik/service-worker.js",
+    "static/css/2.301ce841.chunk.css.map": "/Mozik/static/css/2.301ce841.chunk.css.map",
+    "static/css/main.6b88c009.chunk.css.map": "/Mozik/static/css/main.6b88c009.chunk.css.map",
+    "static/js/2.4ff8b428.chunk.js.LICENSE.txt": "/Mozik/static/js/2.4ff8b428.chunk.js.LICENSE.txt",
+    "static/media/Content.scss": "/Mozik/static/media/01_girls-doing-stuff-playing-drums.52a51c9c.png",
+    "static/media/font-awesome.css": "/Mozik/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b71472d1.js",
+    "static/css/2.301ce841.chunk.css",
+    "static/js/2.4ff8b428.chunk.js",
+    "static/css/main.6b88c009.chunk.css",
+    "static/js/main.0c9d818c.chunk.js"
+  ]
+}
