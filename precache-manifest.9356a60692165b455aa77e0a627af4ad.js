@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c3736fc0bda9ec5b8863e5a39e19d1b6",
+    "revision": "0f6aada5162aac33ccfbe3d6c2835fff",
     "url": "/Mozik/index.html"
   },
   {
-    "revision": "7d7add8610bf71167ed0",
+    "revision": "12111033de0281c333a7",
     "url": "/Mozik/static/css/2.301ce841.chunk.css"
   },
   {
-    "revision": "fe4c6091a7970225e6ac",
+    "revision": "ab49e2b89697b734eb69",
     "url": "/Mozik/static/css/main.6b88c009.chunk.css"
   },
   {
-    "revision": "7d7add8610bf71167ed0",
-    "url": "/Mozik/static/js/2.4ff8b428.chunk.js"
+    "revision": "12111033de0281c333a7",
+    "url": "/Mozik/static/js/2.39017da6.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/Mozik/static/js/2.4ff8b428.chunk.js.LICENSE.txt"
+    "url": "/Mozik/static/js/2.39017da6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fe4c6091a7970225e6ac",
-    "url": "/Mozik/static/js/main.e39a3be6.chunk.js"
+    "revision": "ab49e2b89697b734eb69",
+    "url": "/Mozik/static/js/main.b2afd675.chunk.js"
   },
   {
     "revision": "be68a9776f6f3a11f51e",

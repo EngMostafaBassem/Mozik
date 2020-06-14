@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/Mozik/static/css/main.6b88c009.chunk.css",
-    "main.js": "/Mozik/static/js/main.e39a3be6.chunk.js",
-    "main.js.map": "/Mozik/static/js/main.e39a3be6.chunk.js.map",
+    "main.js": "/Mozik/static/js/main.b2afd675.chunk.js",
+    "main.js.map": "/Mozik/static/js/main.b2afd675.chunk.js.map",
     "runtime-main.js": "/Mozik/static/js/runtime-main.b71472d1.js",
     "runtime-main.js.map": "/Mozik/static/js/runtime-main.b71472d1.js.map",
     "static/css/2.301ce841.chunk.css": "/Mozik/static/css/2.301ce841.chunk.css",
-    "static/js/2.4ff8b428.chunk.js": "/Mozik/static/js/2.4ff8b428.chunk.js",
-    "static/js/2.4ff8b428.chunk.js.map": "/Mozik/static/js/2.4ff8b428.chunk.js.map",
+    "static/js/2.39017da6.chunk.js": "/Mozik/static/js/2.39017da6.chunk.js",
+    "static/js/2.39017da6.chunk.js.map": "/Mozik/static/js/2.39017da6.chunk.js.map",
     "index.html": "/Mozik/index.html",
-    "precache-manifest.df773593ff713bb40841e8e470b3d645.js": "/Mozik/precache-manifest.df773593ff713bb40841e8e470b3d645.js",
+    "precache-manifest.9356a60692165b455aa77e0a627af4ad.js": "/Mozik/precache-manifest.9356a60692165b455aa77e0a627af4ad.js",
     "service-worker.js": "/Mozik/service-worker.js",
     "static/css/2.301ce841.chunk.css.map": "/Mozik/static/css/2.301ce841.chunk.css.map",
     "static/css/main.6b88c009.chunk.css.map": "/Mozik/static/css/main.6b88c009.chunk.css.map",
-    "static/js/2.4ff8b428.chunk.js.LICENSE.txt": "/Mozik/static/js/2.4ff8b428.chunk.js.LICENSE.txt",
+    "static/js/2.39017da6.chunk.js.LICENSE.txt": "/Mozik/static/js/2.39017da6.chunk.js.LICENSE.txt",
     "static/media/Content.scss": "/Mozik/static/media/01_girls-doing-stuff-playing-drums.52a51c9c.png",
     "static/media/font-awesome.css": "/Mozik/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.b71472d1.js",
     "static/css/2.301ce841.chunk.css",
-    "static/js/2.4ff8b428.chunk.js",
+    "static/js/2.39017da6.chunk.js",
     "static/css/main.6b88c009.chunk.css",
-    "static/js/main.e39a3be6.chunk.js"
+    "static/js/main.b2afd675.chunk.js"
   ]
 }
