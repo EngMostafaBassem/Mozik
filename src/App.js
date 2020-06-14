@@ -36,7 +36,7 @@ useEffect(()=>{
   
     setTimeout(() => {
       
-        window.location.assign('https://accounts.spotify.com/en/authorize?client_id=75b27752a2824d73a49e934a0f8e69f4&response_type=token&redirect_uri=http://localhost:3000/Main')
+        window.location.assign('https://accounts.spotify.com/en/authorize?client_id=75b27752a2824d73a49e934a0f8e69f4&response_type=token&redirect_uri=http://localhost:3000/Main/')
 
     }, 3600*60);
   }

@@ -13,19 +13,19 @@ const Hero=()=>{
 
                <div>
                    <figure>
-                       <img src="../../images/ketty2.jpg"/>
+                       <img src={require('../../assets/ketty2.jpg')} />
                    </figure>
                    <figure>
-                       <img src="../../images/selena.jpg"/>
+                       <img src={require('../../assets/selena.jpg')}/>
                    </figure>
                    <figure>
-                       <img src="../../images/taylor.jpg"/>
+                       <img src={require('../../assets/taylor.jpg')} />
                    </figure>
                </div>
            </div>
            <div className="image">
               <figure>
-                  <img src="../../images/background.jpeg"/>
+                  <img src={require('../../assets/background.jpeg')} />
               </figure>
                
                </div>

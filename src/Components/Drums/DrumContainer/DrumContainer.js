@@ -44,14 +44,10 @@ const DrumsContainer=()=>{
                      </Col>
 
                      <Col xs={6} className="d-flex justify-content-center ">
-                     <DrumSwitch/>
+                     <DrumVolume getVolumeRange={getVolumeRange}/>
                      </Col>
                  </Row>
-              <Row >
-                  <Col xs={12} className="d-flex justify-content-center">
-                  <DrumVolume getVolumeRange={getVolumeRange}/>
-                  </Col>
-              </Row>
+            
                
               
 

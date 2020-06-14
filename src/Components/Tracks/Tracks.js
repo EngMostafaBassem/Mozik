@@ -97,7 +97,7 @@ const Tracks=(props)=>{
                   name={item.name}
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
-                  img={actorInfo.img===''?'../../images/anonymous-person-221117.jpg':actorInfo.img}
+                  img={require('../../assets/anonymous-person-221117.jpg')}
                   trackID={item.id}
                    />
                   </Col>
@@ -112,7 +112,7 @@ const Tracks=(props)=>{
                   name={item.name}
                   trackPreview={item.preview_url}
                   time={item.duration_ms}
-                  img={(actorInfo.img==='')?'../../images/anonymous-person-221117.jpg':actorInfo.img}
+                  img={(actorInfo.img==='')?require('../../assets/anonymous-person-221117.jpg'):actorInfo.img}
                   trackID={item.id}
                    />
                   </Col>

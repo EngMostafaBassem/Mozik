@@ -67,7 +67,7 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
                           artistSearch.searchResult.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2" onMouseOver={()=>updateInfo(item)} key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[0].url} 
+                            <Box img={(item.images.length==0)?require('../../assets/anonymous-person-221117.jpg'):item.images[0].url} 
                             
                              name={item.name}
                              subtitle={item.genres[0]}
@@ -81,7 +81,7 @@ const [actorInfo,setActorInfo]=useState({name:'',generes:'',popularity:'',follow
                           artistsData.artists.map(item=>(
                            
                             <Col xs={{size:3}} className="mb-2" onMouseOver={()=>updateInfo(item)} key={item.id} >
-                            <Box img={(item.images.length==0)?'../images/anonymous-person-221117.jpg':item.images[1].url} 
+                            <Box img={(item.images.length==0)?require('../../assets/anonymous-person-221117.jpg'):item.images[1].url} 
                             name={item.name}
                             subtitle={item.genres[0]}
                             actorId={item.id}
