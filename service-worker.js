@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Mozik/precache-manifest.43131e0d1d6ae5a8e81b37f938e5f166.js"
+  "/Mozik/precache-manifest.df773593ff713bb40841e8e470b3d645.js"
 );
 
 self.addEventListener('message', (event) => {
