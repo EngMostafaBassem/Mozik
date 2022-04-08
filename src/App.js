@@ -6,14 +6,6 @@ import {useDispatch} from 'react-redux'
 import authActions from './Redux/Actions/authActions'
 
 function App() {
-
-
-  
-
-
-    
-   
-
 const dispatch=useDispatch()
   function parseURLHash () {
     var search = window.location.hash.substring(1);
@@ -23,19 +15,12 @@ const dispatch=useDispatch()
 }
 var urlHash = parseURLHash();
 var accessToken = urlHash.access_token;
-  useEffect(()=>{
-    
+  useEffect(()=>{   
     dispatch(authActions(accessToken))
-
-    
-
-
 },[])
    
 useEffect(()=>{
-  
-    setTimeout(() => {
-      
+    setTimeout(() => {   
         window.location.assign('https://accounts.spotify.com/en/authorize?client_id=75b27752a2824d73a49e934a0f8e69f4&response_type=token&redirect_uri=http://localhost:3000/Main/')
 
     }, 3600*60);
@@ -43,10 +28,8 @@ useEffect(()=>{
 )
    
   return (
-    <div> 
-       
-      <Main/>       
-     
+    <div>      
+      <Main/>          
     </div>
   );
 }
